@@ -44,6 +44,8 @@ s = tf('s');
 Numer = KLP * OmegaP^2;
 Denom = s^2 + (OmegaP / QP) * s + OmegaP^2;
 
+% Numer = -(10000 / 10000) * (1 / (10000*10000*));
+
 Gv = Numer / Denom;
 Bi1Response = Gv;
 Bi2Response = Gv * Gv;
