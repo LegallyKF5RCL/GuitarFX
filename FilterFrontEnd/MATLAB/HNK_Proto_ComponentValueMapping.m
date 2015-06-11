@@ -6,8 +6,8 @@ format shorteng;
 N = 1 * 10^6;       %Sample size for sweeping components
 
 KLP = 1;            %gain
-OmegaP = 20000;         %3db point
-QP = 2;             %Quality factor
+OmegaP = 20000 * 2 * pi;         %3db point
+QP = 20;             %Quality factor
 
 % R = 10 * 10^3;      %Select resistor value
 R = linspace(1000, 100000, N);      %sweep resistor R from 1ohm to 100kohm
@@ -44,7 +44,9 @@ s = tf('s');
 Numer = KLP * OmegaP^2;
 Denom = s^2 + (OmegaP / QP) * s + OmegaP^2;
 
-% Numer = -(10000 / 10000) * (1 / (10000*10000*));
+% Numer = -(10000 / 10000) * (1 / (10000*10000*2.387324*10^-9*265.2582*10^-12));
+% Denom = s^2 + (1/10000 + 1/10000 + 1/10000)*(1/(2.387324*10^-9))*s + (1 / (10000*10000*2.387324*10^-9*265.2582*10^-12));
+
 
 Gv = Numer / Denom;
 Bi1Response = Gv;
@@ -53,17 +55,17 @@ Bi3Response = Gv * Gv * Gv;
 
 
 figure;
-subplot(3,1,1);
+% subplot(3,1,1);
 bode(Bi1Response);
 title('Frequency response: 1 Biquad');
 
-subplot(3,1,2);
-bode(Bi2Response);
-title('Frequency response: 2 Biquads');
-
-subplot(3,1,3);
-bode(Bi3Response);
-title('Frequency response: 3 Biquads');
+% subplot(3,1,2);
+% bode(Bi2Response);
+% title('Frequency response: 2 Biquads');
+% 
+% subplot(3,1,3);
+% bode(Bi3Response);
+% title('Frequency response: 3 Biquads');
 
 
 
