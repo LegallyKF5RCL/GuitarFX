@@ -7,6 +7,7 @@ format shorteng;
 OmegaP = 20000 * 2 * pi;         %3db point
 QP1 = .517638083;             %Quality factor
 QP2 = 1.414213;
+% QP2 = .7071068;
 QP3 = 1.931851;
 
 s = tf('s');
