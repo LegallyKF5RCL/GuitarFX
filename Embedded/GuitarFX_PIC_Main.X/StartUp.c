@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -5,9 +6,10 @@
 #include <p24Hxxxx.h>
 #include <uart.h>
 #include <timer.h>
+#include <pps.h>
 
 //#define GPIO_TEST       //all GPIOs digital and high
-#define GPIO_BLINK      //all GPIOs digital and blink every half second
+//#define GPIO_BLINK      //all GPIOs digital and blink every half second
 //#define UART_ENABLED
 
 //function declarations
@@ -75,6 +77,11 @@ void StartUp (void)
             UART_ADR_DETECT_DIS &
             UART_RX_OVERRUN_CLEAR
             );
+    
+    PPSUnLock;
+    //PPSOutput(fn,pin);
+    PPSLock;
+    
     printf("UART_DEBUG_TEST_PRINTF\n");
 #endif
 

@@ -6,7 +6,7 @@ n = 1000;       %signal length (specifies number of samples for resolution of pl
 m = 3;         %iterations
 k = 20;         %iteration gain multiplier
 gain = 1;       %linear gain (previous variable was "o")
-power = 19;     %System order (originally set at)
+power = 19;     %System order (originally set at 19)
 
 x = linspace(-1,1,n);       %linear space for gain plot
 dx = linspace(-1,1,n-1);    %linear space for derivative of gain plot

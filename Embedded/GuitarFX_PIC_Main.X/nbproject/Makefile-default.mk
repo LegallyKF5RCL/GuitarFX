@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=Main.c StartUp.c
+SOURCEFILES_QUOTED_IF_SPACED=StartUp.c Main_GuitarFX.c SetupUART_GuitarFX.c Initialize_GuitarFX.c SetupSPI_GuitarFX.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Main.o ${OBJECTDIR}/StartUp.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/Main.o.d ${OBJECTDIR}/StartUp.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/StartUp.o ${OBJECTDIR}/Main_GuitarFX.o ${OBJECTDIR}/SetupUART_GuitarFX.o ${OBJECTDIR}/Initialize_GuitarFX.o ${OBJECTDIR}/SetupSPI_GuitarFX.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/StartUp.o.d ${OBJECTDIR}/Main_GuitarFX.o.d ${OBJECTDIR}/SetupUART_GuitarFX.o.d ${OBJECTDIR}/Initialize_GuitarFX.o.d ${OBJECTDIR}/SetupSPI_GuitarFX.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/Main.o ${OBJECTDIR}/StartUp.o
+OBJECTFILES=${OBJECTDIR}/StartUp.o ${OBJECTDIR}/Main_GuitarFX.o ${OBJECTDIR}/SetupUART_GuitarFX.o ${OBJECTDIR}/Initialize_GuitarFX.o ${OBJECTDIR}/SetupSPI_GuitarFX.o
 
 # Source Files
-SOURCEFILES=Main.c StartUp.c
+SOURCEFILES=StartUp.c Main_GuitarFX.c SetupUART_GuitarFX.c Initialize_GuitarFX.c SetupSPI_GuitarFX.c
 
 
 CFLAGS=
@@ -82,13 +82,6 @@ MP_LINKER_FILE_OPTION=,--script=p24HJ128GP202.gld
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/Main.o: Main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Main.o.d 
-	@${RM} ${OBJECTDIR}/Main.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  Main.c  -o ${OBJECTDIR}/Main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Main.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
-	@${FIXDEPS} "${OBJECTDIR}/Main.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
-	
 ${OBJECTDIR}/StartUp.o: StartUp.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/StartUp.o.d 
@@ -96,20 +89,69 @@ ${OBJECTDIR}/StartUp.o: StartUp.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE)  StartUp.c  -o ${OBJECTDIR}/StartUp.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/StartUp.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/StartUp.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
-else
-${OBJECTDIR}/Main.o: Main.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/Main_GuitarFX.o: Main_GuitarFX.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/Main.o.d 
-	@${RM} ${OBJECTDIR}/Main.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  Main.c  -o ${OBJECTDIR}/Main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Main.o.d"        -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
-	@${FIXDEPS} "${OBJECTDIR}/Main.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	@${RM} ${OBJECTDIR}/Main_GuitarFX.o.d 
+	@${RM} ${OBJECTDIR}/Main_GuitarFX.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  Main_GuitarFX.c  -o ${OBJECTDIR}/Main_GuitarFX.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Main_GuitarFX.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/Main_GuitarFX.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
+${OBJECTDIR}/SetupUART_GuitarFX.o: SetupUART_GuitarFX.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/SetupUART_GuitarFX.o.d 
+	@${RM} ${OBJECTDIR}/SetupUART_GuitarFX.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  SetupUART_GuitarFX.c  -o ${OBJECTDIR}/SetupUART_GuitarFX.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/SetupUART_GuitarFX.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/SetupUART_GuitarFX.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/Initialize_GuitarFX.o: Initialize_GuitarFX.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Initialize_GuitarFX.o.d 
+	@${RM} ${OBJECTDIR}/Initialize_GuitarFX.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  Initialize_GuitarFX.c  -o ${OBJECTDIR}/Initialize_GuitarFX.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Initialize_GuitarFX.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/Initialize_GuitarFX.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/SetupSPI_GuitarFX.o: SetupSPI_GuitarFX.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/SetupSPI_GuitarFX.o.d 
+	@${RM} ${OBJECTDIR}/SetupSPI_GuitarFX.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  SetupSPI_GuitarFX.c  -o ${OBJECTDIR}/SetupSPI_GuitarFX.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/SetupSPI_GuitarFX.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/SetupSPI_GuitarFX.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+else
 ${OBJECTDIR}/StartUp.o: StartUp.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/StartUp.o.d 
 	@${RM} ${OBJECTDIR}/StartUp.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  StartUp.c  -o ${OBJECTDIR}/StartUp.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/StartUp.o.d"        -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/StartUp.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/Main_GuitarFX.o: Main_GuitarFX.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Main_GuitarFX.o.d 
+	@${RM} ${OBJECTDIR}/Main_GuitarFX.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  Main_GuitarFX.c  -o ${OBJECTDIR}/Main_GuitarFX.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Main_GuitarFX.o.d"        -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/Main_GuitarFX.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/SetupUART_GuitarFX.o: SetupUART_GuitarFX.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/SetupUART_GuitarFX.o.d 
+	@${RM} ${OBJECTDIR}/SetupUART_GuitarFX.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  SetupUART_GuitarFX.c  -o ${OBJECTDIR}/SetupUART_GuitarFX.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/SetupUART_GuitarFX.o.d"        -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/SetupUART_GuitarFX.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/Initialize_GuitarFX.o: Initialize_GuitarFX.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Initialize_GuitarFX.o.d 
+	@${RM} ${OBJECTDIR}/Initialize_GuitarFX.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  Initialize_GuitarFX.c  -o ${OBJECTDIR}/Initialize_GuitarFX.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/Initialize_GuitarFX.o.d"        -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/Initialize_GuitarFX.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/SetupSPI_GuitarFX.o: SetupSPI_GuitarFX.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/SetupSPI_GuitarFX.o.d 
+	@${RM} ${OBJECTDIR}/SetupSPI_GuitarFX.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  SetupSPI_GuitarFX.c  -o ${OBJECTDIR}/SetupSPI_GuitarFX.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/SetupSPI_GuitarFX.o.d"        -g -omf=elf -O0 -msmart-io=1 -Wall -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/SetupSPI_GuitarFX.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 endif
 
